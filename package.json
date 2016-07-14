@@ -2,7 +2,7 @@
   "private": true,
   "scripts": {
     "postinstall": "composer install && cp .env.example .env && php artisan key:generate",
-    "start": "php artisan serve & gulp"
+    "start": "php artisan serve | gulp"
   },
   "devDependencies": {
     "browser-sync": "2.11.2",
@@ -26,6 +26,7 @@
   },
   "dependencies": {
     "jquery": "^3.1.0",
-    "normalize.css": "^4.2.0"
+    "normalize.css": "^4.2.0",
+    "svg4everybody": "^2.1.0"
   }
 }
