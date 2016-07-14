@@ -25,6 +25,7 @@
     "remove": "^0.1.5"
   },
   "dependencies": {
+    "angular": "^1.5.7",
     "jquery": "^3.1.0",
     "normalize.css": "^4.2.0",
     "svg4everybody": "^2.1.0"

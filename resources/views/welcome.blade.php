@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="TestApp">
     <head>
         <title>Let's Start</title>
 
@@ -13,7 +13,7 @@
                 <svg class="hero">
                     <use xlink:href="img/sprite.svg#hero"></use>
                 </svg>
-                <div class="title">Let's Start</div>
+                <div class="title" ng-controller="TestAppController">@{{greeting}}</div>
             </div>
         </div>
     </body>
