@@ -1,29 +1,23 @@
 'use strict';
 
-module.exports = function() {
-  $.gulp.task('sprite:svg', function() {
-    return $.gulp.src('./resources/assets/images/sprite/*.svg')
+module.exports = function () {
+  $.gulp.task('sprite:svg', function () {
+    return $.gulp.src('./resources/assets/images/sprites/**/*.svg')
       .pipe($.gp.svgmin({
-        js2svg: {
-          pretty: true
-        }
-      }))
-      .pipe($.gp.cheerio({
-        run: function ($) {
-          $('[fill]').removeAttr('fill');
-          $('[stroke]').removeAttr('stroke');
-          $('[style]').removeAttr('style');
-        },
-        parserOptions: { xmlMode: true }
-      }))
-      .pipe($.gp.replace('&gt;', '>'))
-      .pipe($.gp.svgSprite({
-        mode: {
-          symbol: {
-            sprite: "../sprite.svg"
+        plugins: [
+          {
+            removeAttrs: {
+              attrs: [
+                'fill',
+                'stroke',
+                'stroke-width',
+                'style'
+              ]
+            }
           }
-        }
+        ]
       }))
-      .pipe($.gulp.dest($.config.root + '/assets/img'))
-  })
+      .pipe($.gp.svgSprite($.config.spriteSvgConfig))
+      .pipe($.gulp.dest('./'));
+  });
 };

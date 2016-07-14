@@ -1,3 +1,5 @@
+
+
 html, body {
   height: 100%;
 }
@@ -5,7 +7,7 @@ html, body {
 body {
   display: table;
 
-  width: 100%;
+  width: 100%;
   margin: 0;
   padding: 0;
 
@@ -28,4 +30,15 @@ body {
 
 .title {
   font-size: 96px;
+
+  @include rem(font-size, 84px);
+}
+
+.hero {
+  display: block;
+
+  margin: auto;
+
+  fill: #ff8848;
+  @include rem(width, 150px);
 }
